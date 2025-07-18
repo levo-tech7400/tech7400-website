@@ -30,10 +30,10 @@ This is the live, production-ready website of [TECH7400 LIMITED](https://www.tec
 - Manual SEO and performance tuning
 
 ## 📷 Screenshots
+![Case Studies Page Screenshot](./screenshot/case-studies_page.png)
+![Coast Estimate Page Screenshot](./screenshot/cost_estimate_page.png)
 
-![Homepage](screenshots/homepage.png)
-![Case Studies](screenshots/case-studies.png)
-![Cost Estimate](screenshots/cost-estimate.png)
+
 
 ## 📃 License
 
