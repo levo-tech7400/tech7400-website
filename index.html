@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech7400 Web Design | Transformative Web Design Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .testimonial-slider {
+            scroll-snap-type: x mandatory;
+        }
+
+        .testimonial-slide {
+            scroll-snap-align: start;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .portfolio-item {
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay {
+            background: rgba(59, 130, 246, 0.9);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="logo.png" alt="Tech7400 Logo" class="h-10">
+                    <span class="text-2xl font-bold text-blue-600">Web Design</span>
+                </div>
+
+                <!-- Desktop menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Home</a>
+                        <a href="#services" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Services</a>
+                        <a href="#portfolio" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Portfolio</a>
+                        <a href="/case-studies/case-studies.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Case Studies</a>
+                        <a href="#testimonials" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Testimonials</a>
+                        <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl text-gray-700"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md">Home</a>
+                <a href="#services" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md">Our Services</a>
+                <a href="#portfolio" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md">Our Portfolio</a>
+                <a href="/case-studies/case-studies.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md">Case Studies</a>
+                <a href="#testimonials" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md">Testimonials</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-32 pb-20 md:pt-40 md:pb-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-800 mb-6">
+                        We Build <span class="text-blue-600">Websites</span> That Grow Your Business
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
+                        Modern, fast and conversion-focused web designs that make your brand stand out in the digital world.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="/cost-estimate/cost_estimate.html" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 text-center">
+                            See Your Project Cost Estimate
+                        </a>
+                        <a href="/case-studies/case-studies.html" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 text-center">
+                            View Our Work
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-full h-full bg-blue-100 rounded-2xl -z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Web Tasarım" class="rounded-2xl shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12">
+                Our Impact in Numbers
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-4xl font-bold text-blue-600 mb-2">120+</h3>
+                    <p class="text-gray-600">Projects Delivered</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-blue-600 mb-2">60+</h3>
+                    <p class="text-gray-600">Happy Clients</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-blue-600 mb-2">8</h3>
+                    <p class="text-gray-600">Countries Served</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-blue-600 mb-2">4.9/5</h3>
+                    <p class="text-gray-600">Client Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Expertise</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Comprehensive web design solutions designed to strengthen your business's digital presence.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-paint-brush text-blue-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Custom Website Design</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            We create fully customized web designs that reflect your brand's personality. Every detail is designed with customer experience in mind.
+                        </p>
+                        <a href="#" class="text-blue-600 font-medium inline-flex items-center">
+                            Learn more
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-tachometer-alt text-blue-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Website performance optimization & SEO basics</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            We develop high-performance websites optimized for search engines. Rank higher on Google.
+                        </p>
+                        <a href="#" class="text-blue-600 font-medium inline-flex items-center">
+                            More information
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-shopping-cart text-blue-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">E-commerce Development</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            We offer user-friendly e-commerce solutions that will increase your sales. Secure payment systems and optimized shopping experience.
+                        </p>
+                        <a href="#" class="text-blue-600 font-medium inline-flex items-center">
+                            More information
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Recent Projects</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Some of our conversion-focused web design solutions for brands.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item relative rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Portfolio Project" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 flex items-center justify-center p-6">
+                        <div class="text-center text-white">
+                            <h3 class="text-xl font-bold mb-2">Luxury Hotel Website</h3>
+                            <p class="mb-4">Premium design that increased bookings by 220%</p>
+                            <a href="#" class="inline-block border-2 border-white text-white font-medium py-2 px-6 rounded-lg hover:bg-white hover:text-blue-600 transition">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item relative rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Portfolio Project" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 flex items-center justify-center p-6">
+                        <div class="text-center text-white">
+                            <h3 class="text-xl font-bold mb-2">Technology Startup</h3>
+                            <p class="mb-4">Modern design triples investor interest</p>
+                            <a href="#" class="inline-block border-2 border-white text-white font-medium py-2 px-6 rounded-lg hover:bg-white hover:text-blue-600 transition">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item relative rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Portfolio Project" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 flex items-center justify-center p-6">
+                        <div class="text-center text-white">
+                            <h3 class="text-xl font-bold mb-2">Health Sector</h3>
+                            <p class="mb-4">User-friendly interface that increases appointment rates by 180</p>
+                            <a href="#" class="inline-block border-2 border-white text-white font-medium py-2 px-6 rounded-lg hover:bg-white hover:text-blue-600 transition">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Our business partners' experiences with Tech7400 Web Design.
+                </p>
+            </div>
+
+            <div class="relative">
+                <div class="testimonial-slider flex overflow-x-auto pb-8 scrollbar-hide space-x-6">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide flex-shrink-0 w-full md:w-2/3 lg:w-1/2 bg-white rounded-xl shadow-md p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="flex-shrink-0">
+                                <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client">
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-800">Emma Wilson</h4>
+                                <p class="text-blue-600">Restaurant Owner</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            "Working with Tech7400 Web Design was a game changer. Our reservations increased by 150% with our new website. Thanks for their professional approach and creative solutions!"
+                        </p>
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide flex-shrink-0 w-full md:w-2/3 lg:w-1/2 bg-white rounded-xl shadow-md p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="flex-shrink-0">
+                                <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client">
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-800">James Carter</h4>
+                                <p class="text-blue-600">E-commerce Entrepreneur</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                           "We entrusted our e-commerce site to Tech7400 Web Design and got excellent results. Our sales tripled! Their user experience orientated approach and technical knowledge is really impressive."
+                        </p>
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide flex-shrink-0 w-full md:w-2/3 lg:w-1/2 bg-white rounded-xl shadow-md p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="flex-shrink-0">
+                                <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client">
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-800">Olivia Bennett</h4>
+                                <p class="text-blue-600">Consultancy Firm CEO</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            "We worked with Tech7400 Web Design to strengthen our professional image and got a result far above our expectations. Our website is now a reference design in our sector."
+                        </p>
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="testimonial-prev absolute left-0 top-1/2 -translate-y-1/2 -ml-4 bg-white rounded-full shadow-md p-3 text-blue-600 hover:bg-blue-50 focus:outline-none">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="testimonial-next absolute right-0 top-1/2 -translate-y-1/2 -mr-4 bg-white rounded-full shadow-md p-3 text-blue-600 hover:bg-blue-50 focus:outline-none">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Let Your Website Grow Your Business</h2>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">
+                Schedule your free consultation and discover the best web design solutions for your business with our expert team.
+            </p>
+            <a href="#contact" class="inline-block bg-white hover:bg-gray-100 text-blue-600 font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                Book a Meeting
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Get In Touch</h2>
+                    <p class="text-gray-600 mb-8">
+                        Fill out the form below to discuss your project or get a quote. We'll get back to you as soon as possible.
+                    </p>
+
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Contact us</h2>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-1">Address</h3>
+                                <p class="text-gray-600">Lytchett House, 13 Freeland Park, Wareham Road <br>Dorset BH16 6FA, United Kingdom</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-1">E-mail</h3>
+                                <p class="text-gray-600">info@tech7400.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-phone-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-1">Phone</h3>
+                                <p class="text-gray-600"></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-clock text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-1">Working Hours</h3>
+                                <p class="text-gray-600">Monday to Friday: 09:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Social Media</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-100 hover:bg-blue-200 text-blue-600 p-3 rounded-full transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 hover:bg-blue-200 text-blue-600 p-3 rounded-full transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 hover:bg-blue-200 text-blue-600 p-3 rounded-full transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 hover:bg-blue-200 text-blue-600 p-3 rounded-full transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <span class="text-blue-400 font-bold text-xl">Tech7400</span>
+                    <span class="font-light ml-1">Web Design</span>
+                    <p class="text-gray-400 mb-6">
+                        We lead businesses through digital transformation. Modern web design solutions that contribute to brand growth.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Our Services</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition">Our Portfolio</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Web Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">E-Commerce</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">SEO Optimisation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Brand Identity</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">UI/UX Design</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2025 Tech7400 Web Design. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Cookies</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms and Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* Mobile menu toggle */
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn  = document.querySelector('.mobile-menu-button');
+            const menu = document.querySelector('.mobile-menu');
+
+            btn?.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        });
+
+        /* Testimonial slider */
+        const slider = document.querySelector('.testimonial-slider');
+        const prevButton = document.querySelector('.testimonial-prev');
+        const nextButton = document.querySelector('.testimonial-next');
+
+        if (nextButton) {
+            nextButton.addEventListener('click', () => {
+                const slideWidth = document.querySelector('.testimonial-slide').offsetWidth;
+                slider.scrollBy({ left: slideWidth, behavior: 'smooth' });
+            });
+        }
+
+        if (prevButton) {
+            prevButton.addEventListener('click', () => {
+                const slideWidth = document.querySelector('.testimonial-slide').offsetWidth;
+                slider.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+            });
+        }
+
+        /* Smooth scrolling for navigation links */
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+
+                /* Close mobile menu if open */
+                const menu = document.querySelector('.mobile-menu');
+                if (menu && !menu.classList.contains('hidden')) {
+                    menu.classList.add('hidden');
+                }
+            });
+        });
+
+        /* Add shadow to navbar on scroll */
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/6875b52509e98e191197613a/1j05sn77t';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>
