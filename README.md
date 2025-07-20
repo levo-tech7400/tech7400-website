@@ -40,6 +40,6 @@ This is the live, production-ready website of [TECH7400 LIMITED](https://www.tec
 MIT License
 
 🔗 Live Website: [www.tech7400.com](https://www.tech7400.com)  
-📫 LinkedIn: [Levent Erdost](https://www.linkedin.com/in/levent-erdost-2b0784201)  
+📫 LinkedIn: [Levent E.](https://www.linkedin.com/in/levent-erdost-2b0784201)  
 💻 GitHub: [@levo-tech7400](https://github.com/levo-tech7400)
 
