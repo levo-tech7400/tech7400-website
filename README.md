@@ -41,5 +41,5 @@ MIT License
 
 🔗 Live Website: [www.tech7400.com](https://www.tech7400.com)  
 📫 LinkedIn: [Levent Erdost](https://www.linkedin.com/in/levent-erdost-2b0784201)  
-💻 GitHub: [@niin10](https://github.com/niin10)
+💻 GitHub: [@levo-tech7400](https://github.com/levo-tech7400)
 
