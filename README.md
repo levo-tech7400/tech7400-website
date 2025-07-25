@@ -16,7 +16,7 @@ The site is built from scratch using HTML, CSS (Tailwind), and custom SEO/UX opt
 
 # TECH7400 Official Website
 
-![Main Page Screenshot](./screenshot/main_page.png)
+![Main Page Screenshot](./screenshot/main_pagea.png)
 
 This is the live, production-ready website of [TECH7400 LIMITED](https://www.tech7400.com), a UK-registered digital services company...
 
